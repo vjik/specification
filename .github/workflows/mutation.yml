@@ -1,0 +1,41 @@
+name: mutation test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  mutation:
+    name: PHP ${{ matrix.php }}-${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        php:
+          - 8.3
+
+    steps:
+      - name: Checkout.
+        uses: actions/checkout@v4
+
+      - name: Install PHP with extensions.
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php }}"
+          ini-values: memory_limit=-1
+          coverage: xdebug
+          tools: composer:v2
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Run roave infection.
+        run: |
+          vendor/bin/roave-infection-static-analysis-plugin --threads=2 --ignore-msi-with-no-mutations --only-covered
+        env:
+          STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
