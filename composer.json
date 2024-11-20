@@ -1,33 +1,35 @@
 {
-    "name": "vjik/_____",
+    "name": "vjik/specification",
     "type": "library",
-    "description": "_____",
+    "description": "Implementation of specification pattern",
     "keywords": [
-        "_____"
+        "php",
+        "specification",
+        "pattern"
     ],
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/vjik/_____/issues?state=open",
-        "source": "https://github.com/vjik/_____"
+        "issues": "https://github.com/vjik/specification/issues?state=open",
+        "source": "https://github.com/vjik/specification"
     },
     "minimum-stability": "stable",
     "require": {
-        "php": "^8.0"
+        "php": "^8.2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.64",
-        "phpunit/phpunit": "^9.5",
-        "roave/infection-static-analysis-plugin": "^1.25",
-        "vimeo/psalm": "^4.30|^5.1"
+        "phpunit/phpunit": "^10.5",
+        "roave/infection-static-analysis-plugin": "^1.35",
+        "vimeo/psalm": "^5.26"
     },
     "autoload": {
         "psr-4": {
-            "Vjik\\_____\\": "src"
+            "Vjik\\Specification\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vjik\\_____\\Tests\\": "tests"
+            "Vjik\\Specification\\Tests\\": "tests"
         }
     },
     "scripts": {

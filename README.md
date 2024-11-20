@@ -1,4 +1,4 @@
-# _____
+# PHP Specification Pattern
 
 [![Latest Stable Version](https://poser.pugx.org/vjik/_____/v/stable.png)](https://packagist.org/packages/vjik/_____)
 [![Total Downloads](https://poser.pugx.org/vjik/_____/downloads.png)](https://packagist.org/packages/vjik/_____)
@@ -20,7 +20,7 @@ The package ...
 The package could be installed with [composer](https://getcomposer.org/download/):
 
 ```shell
-composer require vjik/_____
+composer require vjik/specification
 ```
 
 ## General usage
