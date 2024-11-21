@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Vjik\Specification;
 
 /**
- * Interface reflects the "Specification" design pattern.
+ * Interface reflects "Specification" design pattern.
  *
  * @see https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Specification/README.html
  *
