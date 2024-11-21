@@ -11,6 +11,4 @@ use RuntimeException;
  *
  * @api
  */
-final class SpecificationException extends RuntimeException implements SpecificationExceptionInterface
-{
-}
+final class SpecificationException extends RuntimeException implements SpecificationExceptionInterface {}

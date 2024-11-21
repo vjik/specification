@@ -11,6 +11,4 @@ use Throwable;
  *
  * @api
  */
-interface SpecificationExceptionInterface extends Throwable
-{
-}
+interface SpecificationExceptionInterface extends Throwable {}
