@@ -11,7 +11,11 @@
 
 The package provides PHP implementation of
 "[Specification](https://designpatternsphp.readthedocs.io/en/latest/Behavioral/Specification/README.html)"
-software design pattern.
+software design pattern:
+
+- interface `SpecificationInterface` and abstract `BaseSpecification` to create user specifications;
+- composite specifications `AndSpecification` and `OrSpecification`;
+- negation specification `NotSpecification`.
 
 ## Requirements
 
@@ -26,6 +30,87 @@ composer require vjik/specification
 ```
 
 ## General usage
+
+You can create your own specifications by inheriting from the `BaseSpecification` class:
+
+```php
+use Vjik\Specification\BaseSpecification;
+    
+/**
+ * @template T as User
+ * @template-extends BaseSpecification<T>
+ */
+final class UserIsAdultSpecification extends BaseSpecification
+{
+    /**
+     * @param T $value
+     */
+    public function isSatisfiedBy(mixed $value): bool
+    {
+        return $value->age >= 18;
+    }
+}
+
+$specification = new UserIsAdultSpecification();
+
+// true or false
+$specification->isSatisfiedBy($user); 
+
+// throws an exception if user is not adult
+$specification->satisfiedBy($user); 
+```
+
+> We recommend use static analysis tools like [Psalm](https://psalm.dev) and [PHPStan](https://phpstan.org)
+> to improve code quality.
+
+You can combine specifications using composite specifications:
+
+```php
+use Vjik\Specification\AndSpecification;
+use Vjik\Specification\OrSpecification;
+
+// User is adult AND active
+$isActiveAdultUserSpecification = new AndSpecification([
+    new UserIsAdultSpecification(),
+    new UserIsActiveSpecification(),
+]);
+
+// User is adult OR user with parents
+$userHasAccessSpecification = new OrSpecification([
+    new UserIsAdultSpecification(),
+    new UserWithParentsSpecification(),
+]);
+```
+
+Also, you can use negation specification:
+
+```php
+use Vjik\Specification\NotSpecification;
+
+// User is not adult
+$userIsNotAdultSpecification = new NotSpecification(
+    new UserIsAdultSpecification()
+);
+```
+
+Static analysis tools like [Psalm](https://psalm.dev) and [PHPStan](https://phpstan.org) helps you to avoid mistakes.
+For example, Psalm issues:
+
+```php
+$userIsAdultSpecification = new UserIsAdultSpecification();
+
+// ERROR: InvalidArgument Argument 1 of UserIsAdultSpecification::isSatisfiedBy expects User, but 'test' provided
+$userIsAdultSpecification->isSatisfiedBy('test')
+
+// ERROR: InvalidArgument Argument 1 of UserIsAdultSpecification::satisfiedBy expects User, but 'test' provided
+$userIsAdultSpecification->satisfiedBy('test')
+
+// ERROR: InvalidArgument Incompatible types found for T (must have only one of User, Post)
+$isActiveAdultUserSpecification = new AndSpecification([
+    new UserIsAdultSpecification(),
+    new PostIsActiveSpecificaion(),
+]);
+```
 
 ## Documentation
 
