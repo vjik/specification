@@ -104,10 +104,10 @@ For example, Psalm issues:
 $userIsAdultSpecification = new UserIsAdultSpecification();
 
 // ERROR: InvalidArgument Argument 1 of UserIsAdultSpecification::isSatisfiedBy expects User, but 'test' provided
-$userIsAdultSpecification->isSatisfiedBy('test')
+$userIsAdultSpecification->isSatisfiedBy('test');
 
 // ERROR: InvalidArgument Argument 1 of UserIsAdultSpecification::satisfiedBy expects User, but 'test' provided
-$userIsAdultSpecification->satisfiedBy('test')
+$userIsAdultSpecification->satisfiedBy('test');
 
 // ERROR: InvalidArgument Incompatible types found for T (must have only one of User, Post)
 $isActiveAdultUserSpecification = new AndSpecification([
