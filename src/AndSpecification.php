@@ -31,7 +31,7 @@ final class AndSpecification extends BaseSpecification
             } catch (SpecificationException $exception) {
                 throw $this->message === null
                     ? $exception
-                    : new SpecificationException($this->message);
+                    : new SpecificationException($this->message, previous: $exception);
             }
         }
     }
