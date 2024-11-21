@@ -16,8 +16,7 @@ final class NumberSpecification extends BaseSpecification
     public function __construct(
         private readonly ?int $max = null,
         private readonly ?int $min = null,
-    ) {
-    }
+    ) {}
 
     /**
      * @param T $value

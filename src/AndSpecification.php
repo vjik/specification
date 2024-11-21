@@ -17,8 +17,7 @@ final class AndSpecification extends BaseSpecification
          */
         private readonly array $specifications,
         private readonly ?string $message = null,
-    ) {
-    }
+    ) {}
 
     /**
      * @param T $value

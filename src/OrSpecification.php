@@ -17,8 +17,7 @@ final class OrSpecification extends BaseSpecification
          */
         private readonly array $specifications,
         private readonly string $message = 'Specification is not satisfied.',
-    ) {
-    }
+    ) {}
 
     /**
      * @param T $value

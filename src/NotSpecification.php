@@ -17,8 +17,7 @@ final class NotSpecification extends BaseSpecification
          */
         private readonly SpecificationInterface $specification,
         private readonly string $message = 'Specification is not satisfied.',
-    ) {
-    }
+    ) {}
 
     /**
      * @param T $value
