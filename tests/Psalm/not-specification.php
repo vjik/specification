@@ -9,7 +9,7 @@ use Vjik\Specification\Tests\Support\NumberSpecification;
 function invalidTypeInSatisfiedBy(): void
 {
     $specification = new NotSpecification(
-        new NumberSpecification(min: 3)
+        new NumberSpecification(min: 3),
     );
 
     /** @psalm-suppress InvalidArgument */
@@ -19,7 +19,7 @@ function invalidTypeInSatisfiedBy(): void
 function invalidTypeInIsSatisfiedBy(): void
 {
     $specification = new NotSpecification(
-        new NumberSpecification(min: 3)
+        new NumberSpecification(min: 3),
     );
 
     /** @psalm-suppress InvalidArgument */
