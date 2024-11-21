@@ -1,8 +1,8 @@
 # Specification Pattern
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/specification/v)](https://packagist.org/packages/yiisoft/specification)
-[![Total Downloads](https://poser.pugx.org/yiisoft/specification/downloads)](https://packagist.org/packages/yiisoft/specification)
-[![Build status](https://github.com/yiisoft/specification/actions/workflows/build.yml/badge.svg)](https://github.com/yiisoft/specification/actions/workflows/build.yml)
+[![Latest Stable Version](https://poser.pugx.org/vjik/specification/v)](https://packagist.org/packages/vjik/specification)
+[![Total Downloads](https://poser.pugx.org/vjik/specification/downloads)](https://packagist.org/packages/vjik/specification)
+[![Build status](https://github.com/vjik/specification/actions/workflows/build.yml/badge.svg)](https://github.com/vjik/specification/actions/workflows/build.yml)
 [![Coverage Status](https://coveralls.io/repos/github/vjik/specification/badge.svg)](https://coveralls.io/github/vjik/specification)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fvjik%2Fspecification%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/vjik/specification/master)
 [![type-coverage](https://shepherd.dev/github/vjik/specification/coverage.svg)](https://shepherd.dev/github/vjik/specification)
