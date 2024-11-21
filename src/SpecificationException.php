@@ -7,6 +7,8 @@ namespace Vjik\Specification;
 use RuntimeException;
 
 /**
+ * Simple exception that thrown if the value does not satisfy the specification.
+ *
  * @api
  */
-class SpecificationException extends RuntimeException {}
+final class SpecificationException extends RuntimeException implements SpecificationExceptionInterface {}

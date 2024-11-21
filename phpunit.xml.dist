@@ -18,7 +18,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="PHP Specification tests">
+        <testsuite name="Specification pattern tests">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

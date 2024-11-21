@@ -1,7 +1,7 @@
 {
     "name": "vjik/specification",
     "type": "library",
-    "description": "Implementation of specification pattern",
+    "description": "Implementation of Specification pattern",
     "keywords": [
         "php",
         "specification",
