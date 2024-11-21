@@ -63,6 +63,8 @@ $specification->satisfiedBy($user);
 > We recommend use static analysis tools like [Psalm](https://psalm.dev) and [PHPStan](https://phpstan.org)
 > to improve code quality.
 
+### Built-in specifications
+
 You can combine specifications using composite specifications:
 
 ```php
@@ -92,6 +94,8 @@ $userIsNotAdultSpecification = new NotSpecification(
     new UserIsAdultSpecification()
 );
 ```
+
+### Static analysis compatible
 
 Static analysis tools like [Psalm](https://psalm.dev) and [PHPStan](https://phpstan.org) helps you to avoid mistakes.
 For example, Psalm issues:
