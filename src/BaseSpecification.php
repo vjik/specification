@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Vjik\Specification;
 
 /**
+ * Base class that can be used to create specifications.
+ *
  * @template T
  * @template-implements SpecificationInterface<T>
  * @api
@@ -12,9 +14,10 @@ namespace Vjik\Specification;
 abstract class BaseSpecification implements SpecificationInterface
 {
     /**
-     * @param T $value
+     * @param T $value The value to check.
+     * @return bool Whether the value satisfies the specification.
      */
-    public function isSatisfiedBy(mixed $value): bool
+    final public function isSatisfiedBy(mixed $value): bool
     {
         try {
             $this->satisfiedBy($value);
